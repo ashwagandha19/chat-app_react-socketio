@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import "reset.css";
+
+:root {
+  --first-color: #201E1F;
+  --second-color: #EEF0F2;
+  --third-color: #FF9914;
+  --white: #fff;
+  --black: #0A0908;
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Nunito', sans-serif;;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --font-big: 2.074rem;
+  --font-h1: 1.728rem;
+  --font-h2: 1.44rem;
+  --font-h3: 1.2rem;
+  --font-normal: 1rem;
+  --font-small: 0.833rem;
+  --font-smaller: 0.694rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+
+  /*========== Margins ==========*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--first-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: .75;
+  background: url("./cool-background.svg");
+  background-size: cover;
+  background-position: center center;
+
+}
+
+  .App {
+      width: 80vw;
+      height: 80vh;
+      background: transparent;
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+
+      border-radius: 5px;
+  }
+
+  .sidebar {
+    background-color: #8338EC;
+    flex: 1;
+    color: #fff;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: var(--font-normal);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar span {
+    font-size: var(--font-normal);
+    color: #fff;
+  }
+
+
+  .joinChatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    flex: 4;
+  }
+  
+  .joinChatContainer h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .joinChatContainer input {
+    width: 210px;
+    height: 40px;
+    margin: 7px;
+    border: 2px solid var(--first-color);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .joinChatContainer button {
+    width: 225px;
+    height: 50px;
+    margin: 7px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    background: var(--first-color);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .joinChatContainer button:hover {
+    background: #2e7d32;
+  }
+  
+  .chat-window {
+    flex: 4;
+  }
+  
+  .chat-window .chat-header {
+    height: 45px;
+    background: #8338EC;
+    position: relative;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .chat-window .chat-header p {
+    display: block;
+    padding: 0 1em 0 2em;
+    color: #fff;
+    font-weight: 700;
+    line-height: 45px;
+  }
+  
+  .chat-window .chat-body {
+    height: calc(100% - 85px);
+    background: #fff;
+  
+    position: relative;
+  }
+  .chat-window .chat-body .message-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    opacity: 1;
+  }
+  
+  .chat-window .chat-body .message-container::-webkit-scrollbar {
+    display: none;
+  }
+  .chat-window .chat-body .message {
+    height: auto;
+    padding: 10px;
+    display: flex;
+    opacity: 1;
+  }
+  
+  .chat-window .chat-body .message .message-content {
+    width: auto;
+    height: auto;
+    min-height: 40px;
+    max-width: 120px;
+    background-color: #000;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    opacity: 1;
+  }
+  
+  #you {
+    justify-content: flex-start;
+  }
+  
+  #you .message-content {
+    justify-content: flex-start;
+  }
+  
+  #you .message-meta {
+    justify-content: flex-start;
+    margin-left: 5px;
+  }
+  
+  #other {
+    justify-content: flex-end;
+  }
+  
+  #other .message-content {
+    justify-content: flex-end;
+    background-color: #8338EC;
+  }
+  
+  #other .message-meta {
+    justify-content: flex-end;
+    margin-right: 5px;
+  }
+  
+  .message-meta #author {
+    margin-left: 10px;
+    font-weight: 700;
+    color: #8338EC;
+  }
+  
+  .chat-window .chat-body .message .message-meta {
+    display: flex;
+    font-size: 12px;
+  }
+  
+  .chat-window .chat-footer {
+    position: relative;
+    height: 40px;
+    border: none;
+
+    display: flex;
+  }
+  
+  .chat-window .chat-footer input {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    background-color: #8338EC;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+  }
+  
+  .chat-window .chat-footer button {
+    background-color: transparent;
+    color: #fff;
+    background-color: #8338EC;
+    transition: all .3s;
+    outline: none;
+    border: none;
+    position: absolute;
+  }
+
+  .chat-window .chat-footer .mic {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .chat-window .chat-footer .send {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .chat-window .chat-footer button:hover {
+    color: grey;
+    cursor: pointer;
+  }
+
+  .chat-window .chat-footer button:active {
+    outline: none;
+  }
+
+  .icon {
+    font-size: var(--font-h3);
+  }
+
+  .hide {
+    opacity: 0 !important;
+  }
