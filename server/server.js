@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
     //* accept socket communication with our react app
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://vladweb-portfolio-chatapp.netlify.app",
         methods: ["GET", "POST"],
     },
 });

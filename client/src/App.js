@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
 
-const socket = io.connect('http://localhost:3001');
+const socket = io.connect('https://chatapp-express.onrender.com');
 
 function App() {
   const [username, setUsername] = useState("");
